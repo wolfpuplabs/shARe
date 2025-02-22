@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>StickAR by WolfpupLabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link type="text/css" href="./assets/css/styles.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+</head>
+<body>
+    <div id="password-overlay">
+        <div class="password-container">
+            <label for="password-input">Enter Serial Number</label>
+            <input type="password" id="password-input">
+            <div><button id="submit-password">Submit</button></div>
+            <p id="password-error" style="display:none; color:red;">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+    <div id="model-content">
+        <!-- Header -->
+        <header>
+            <a href="/" class="c-button back">
+            </a>
+            <a class="c-logo" href="/">
+                <img src="./assets/images/logo-stickar.png" alt="StickAR's Logo">
+            </a>
+        </header>
+        <!-- End of Header -->
+
+        <!-- Model Viewer Container -->
+        <model-viewer id="ARViewer" bounds="tight" ar ar-modes="webxr quick-look" camera-controls loading="eager" shadow-intensity="1" environment-image="neutral" auto-rotate min-camera-orbit="auto 89deg auto" max-camera-orbit="auto 89deg auto">
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+                <div class="update-text">Loading Asset 0%</div>
+            </div>
+            <div id="ar-prompt">
+                <img src="assets/images/ar_hand_prompt.png">
+            </div>
+        </model-viewer> 
+        <!-- End of Model Viewer Container -->
+
+        <!-- Button Previous and Next -->
+        <div id="controls">
+            <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <!-- End of Button Previous and Next -->
+    </div>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
